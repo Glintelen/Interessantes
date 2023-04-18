@@ -1,0 +1,18 @@
+//calculadora de volume de esfera
+#include <stdio.h>
+#include<stdlib.h>
+#include <math.h>
+float vol;
+float raio(int R){
+    float pi=3.1415;
+    printf("Digite o raio de uma esfera: ");
+scanf("%d",&R);
+
+vol=(4 * pi * pow(R,3))/3;
+return vol;
+}
+int main() {
+    int R;
+    raio(R);
+    printf("O volume dessa esfera é: %lf",vol);
+}
