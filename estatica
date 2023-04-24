@@ -59,15 +59,21 @@ int main() {
        printf("1- Criar Pilha de alunos: \n");
        printf("2- Inserir um elemento na Pilha: \n");
        printf("3- Imprimir a Pilha: \n");
-       printf("4- Excluir um elemento da pilha");
+       printf("4- Excluir um elemento da pilha: \n");
         
         
         )
-  case 1:
-  
-  
+ switch(opcao){
+  case 1: 
+        Iniciar_Pilha(&p);
+        break;
   case 2: 
-  
+    do{
+        printf("\nDigite a chave: ");
+        scanf("%d",&r.chave);
+        puch(&p,r);
+        printf("\nDeseja digitar mais elementos (s/n)?\n");
+    }
   case 3:
         Impressao_Pilha(&p);
         
