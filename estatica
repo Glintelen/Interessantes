@@ -1,0 +1,86 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
+#include <stdbool.h>
+#define N 50
+
+typedef int Tipo_Chave;
+
+typedef struct(
+    Tipo_Chave chave;
+    )Registro;
+
+typedef struct(
+    Registro V[N];
+    int topo;
+    )Pilha;
+
+void Iniciar Pilha Pilha(Pilha *p)(
+    p->topo=-1);
+    
+int Numero_Elementos(Pilha *p)(
+    return p->topo+1;
+    )
+    
+void Impressao_Pilha(Pilha *p)(
+    printf("Pilha estatica\n\n")
+    int i;
+    for(i=p->topo;i>=0;i--)(
+        printf(" %d \n",p->V[i].chave);
+        )
+    )
+    
+    bool puch (Pilha *p,Registro r)(
+        if(p->topo>=N-1)
+        return 0;
+        p->topo=p->topo+1;
+        p->V[p->topo]=r;
+        return 1;
+        
+    bool pop(Pilha *p.Registro *r)(
+        if(p->topo==-1)
+        return 0;
+        *r=p->V[p->topo];
+        p->topo=p->topo-1;
+        return 1;
+        
+        )    
+        void Reinicializar (Pilha *p)(
+            p->topo=-1;
+            )
+int main() {
+    setlocale(LC_ALL,"portuguese");
+    Pilha p;
+    char sair,op;
+    int opcao=0;
+    Tipo_Chave ch;
+    Registro r;
+    do(
+       printf("1- Criar Pilha de alunos: \n");
+       printf("2- Inserir um elemento na Pilha: \n");
+       printf("3- Imprimir a Pilha: \n");
+       printf("4- Excluir um elemento da pilha");
+        
+        
+        )
+  case 1:
+  
+  
+  case 2: 
+  
+  case 3:
+        Impressao_Pilha(&p);
+        
+    case 4:
+    pop(&p,&r);
+    break;
+    )
+    printf("\n\n=========================\n\n");
+    fflush(stdin);
+    printf("Deseja sair do programa (s/n): \n");
+    scanf("%c",&sair);
+    printf("\n\n======================\n\n");
+    while (sair!='s');
+    return 0;
+    
+}
