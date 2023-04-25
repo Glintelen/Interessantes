@@ -8,10 +8,6 @@ typedef struct{
     Tipo_Chave chave;
     }Registro;
     
-typedef struct aux{
-    Registro r;
-    struct aux* prox;
-}Elemento;
 typedef struct{
     Registro V[N];
     int topo;
