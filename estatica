@@ -7,6 +7,11 @@ typedef int Tipo_Chave;
 typedef struct{
     Tipo_Chave chave;
     }Registro;
+    
+typedef struct aux{
+    Registro r;
+    struct aux* prox;
+}Elemento;
 typedef struct{
     Registro V[N];
     int topo;
@@ -21,7 +26,7 @@ void Impressao_Pilha(Pilha *p){
     printf("Pilha estatica \n\n");
     int i;
     for(i=p->topo;i>=0;i--){
-        printf(" %d \n",p->V[i].chave);
+        printf(" %d \n",p->V[i].chave);}
 }
     bool puch (Pilha *p,Registro r){
         if(p->topo>=N-1)
@@ -55,6 +60,10 @@ int main() {
        printf("2- Inserir um elemento na Pilha: \n");
        printf("3- Imprimir a Pilha: \n");
        printf("4- Excluir um elemento da pilha: \n");
+       
+       printf("Digite a opção: \n");
+       scanf("%d",&opcao);
+       printf("\n====================\n");
         
  switch(opcao){
   case 1: 
@@ -69,19 +78,20 @@ int main() {
     }while (sair!='s');
   case 3:
         Impressao_Pilha(&p);
-        
+        break;
     case 4:
     pop(&p,&r);
     break;
-    
  do{
     printf("\n\n=========================\n\n");
     fflush(stdin);
     printf("Deseja sair do programa (s/n): \n");
     scanf("%c",&sair);
-    printf("\n\n======================\n\n");
- }
-    while (sair!='s');
-    return 0;
-
- }while (opcao=1 || opcao=1||opcao=3||opcao=4);
+    printf("\n\n=========================\n\n");
+ } while (sair!='s');
+  
+}
+while (opcao==1 || opcao==2||opcao==3||opcao==4);
+return 0;
+}
+}
